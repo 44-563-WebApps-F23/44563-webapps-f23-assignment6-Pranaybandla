@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+ <title>Author PAge</title>
+ 
+<body>
+<h4>Author entry Pranay Kumar Bandla</h4>
+<h2>Getting input</h2>
+
+<form>
+    <label for="secretAuthor">The hidden author name:</label>
+        <input type="password" id="secretAuthor" value="Dickens">
+        <br><br>
+        <label for="guessAuthor">Guess the author:</label>
+        <input type="text" id="guessAuthor"><br><br>    
+
+    <input type="button" onclick="checkAuthor()" value="Check the guess">
+</form>
+
+
+<p id="results"> </p>
+
+<script> 
+
+var good = 0;
+var oops = 0;
+function checkAuthor() {
+           
+            var secretAuthorInput = document.getElementById("secretAuthor");
+            var guessAuthorInput = document.getElementById("guessAuthor");
+
+            var secretAuthor = secretAuthorInput.value;
+            var guess = guessAuthorInput.value;
+
+            if (secretAuthor === guess) {
+                good++; 
+                alert("You got it right!");
+            } else {
+                oops++; 
+                alert("Sorry!");
+            }
+
+            var resultsElement = document.getElementById("results");
+            resultsElement.textContent = "Good: " + good + ", Oops: " + oops;
+        }
+    </script>
+
+</body>
+</html> 
