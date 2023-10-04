@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
  <title>Author PAge</title>
- 
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 <body>
 <h4>Author entry Pranay Kumar Bandla</h4>
 <h2>Getting input</h2>
@@ -15,13 +16,19 @@
 
     <input type="button" onclick="checkAuthor()" value="Check the guess">
 </form>
-
+<div class="alert alert-danger mt-3" id="incorrectGuesses" style="display:none;">
+    Incorrect Guesses: <span id="incorrectCount">0</span>
+</div>
+<div class="alert alert-warning mt-3" id="outOfGuesses" style="display:none;">
+    Sorry, ran out of guesses.
+</div>
 
 <p id="results"> </p>
 <script> 
 
 var good = 0;
 var oops = 0;
+let incorrectCount=0;
 function checkAuthor() {
            
             var secretAuthorInput = document.getElementById("secretAuthor");
@@ -36,11 +43,19 @@ function checkAuthor() {
             } else {
                 oops++; 
                 alert("Sorry!");
+                incorrectCount++;
             }
+            
 
             var resultsElement = document.getElementById("results");
             resultsElement.textContent = "Good: " + good + ", Oops: " + oops;
+            if (incorrectCount === 7) {
+                    document.getElementById("outOfGuesses").style.display = "block";
+                    document.getElementById("checkGuessButton").onclick = function () {
+                        alert("Sorry, ran out of guesses.");
+                    }
         }
+    }
     </script>
 
     <div id="image">
@@ -67,7 +82,6 @@ function checkAuthor() {
         }
     }
     </script>
-<!--part 4 completed-->
 
 </body>
 </html> 
