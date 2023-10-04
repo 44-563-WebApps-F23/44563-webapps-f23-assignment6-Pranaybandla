@@ -16,9 +16,7 @@
 
     <input type="button" onclick="checkAuthor()" value="Check the guess">
 </form>
-<div class="alert alert-danger mt-3" id="incorrectGuesses" style="display:none;">
-    Incorrect Guesses: <span id="incorrectCount">0</span>
-</div>
+
 <div class="alert alert-warning mt-3" id="outOfGuesses" style="display:none;">
     Sorry, ran out of guesses.
 </div>
@@ -28,7 +26,7 @@
 
 var good = 0;
 var oops = 0;
-let incorrectCount=0;
+let incorrectCount = 0;
 function checkAuthor() {
            
             var secretAuthorInput = document.getElementById("secretAuthor");
