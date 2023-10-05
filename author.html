@@ -2,26 +2,50 @@
 <html>
  <title>Author Page</title>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+     body {
+            padding: 20px;
+        }
 
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+    .custom-btn {
+            width: 50%;
+            margin-top: 10px;
+        }
+        .form-control {
+            border: 2px solid #007bff; 
+            color: #007bff; 
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        form-control:focus {
+            border-color: #0056b3; 
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+</style>
 <body>
 <h4>Author entry Pranay Kumar Bandla</h4>
 <h2>Getting input</h2>
 
 <form>
         <label for="secretAuthor">The hidden author name:</label>
-        <input type="password" id="secretAuthor" value="Dickens">
-        <br><br>
+        <input type="password" class="form-control" id="secretAuthor" value="Dickens">
+        <br>
         <label for="guessAuthor">Guess the author:</label>
-        <input type="text" id="guessAuthor"><br><br>    
+        <input type="text" class="form-control" id="guessAuthor"><br>   
 
-    <input type="button" onclick="checkAuthor()" value="Check the guess">
+    <input type="button" onclick="checkAuthor()" class="btn btn-primary custom-btn" value="Check the guess">
+    <br><p id="results"> </p>
 </form>
 
-<div class="alert alert-warning mt-3" id="outOfGuesses" style="display:none;">
+<div class="alert alert-success mt-3" id="outOfGuesses" style="display:none;" role="alert">
     Sorry, ran out of guesses.
 </div>
 
-<p id="results"> </p>
+
 <script> 
 
 var good = 0;
@@ -57,7 +81,7 @@ function checkAuthor() {
     </script>
 
     <div id="image">
-        <img src="cities/NYC.jpg" id="cityimage" width="100px" height="100px" alt="New York City" onclick="selectImage()">
+        <img src="cities/NYC.jpg" class="img-fluid" id="cityimage" width="100px" height="100px" alt="New York City" onclick="selectImage()">
     </div>
     <script>
     var useImage=1;
