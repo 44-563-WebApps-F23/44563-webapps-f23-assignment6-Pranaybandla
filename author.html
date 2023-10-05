@@ -5,6 +5,7 @@
 <style>
      body {
             padding: 20px;
+            background-color: aliceblue;
         }
 
         form {
@@ -25,17 +26,25 @@
             border-color: #0056b3; 
             box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
         }
+        .form-group label {
+            font-weight: bold;
+            color: #f55a07; /* Blue text color */
+        }
 </style>
 <body>
 <h4>Author entry Pranay Kumar Bandla</h4>
 <h2>Getting input</h2>
 
 <form>
+    <div class="form-group">
         <label for="secretAuthor">The hidden author name:</label>
         <input type="password" class="form-control" id="secretAuthor" value="Dickens">
+    </div>
         <br>
+        <div class="form-group">
         <label for="guessAuthor">Guess the author:</label>
-        <input type="text" class="form-control" id="guessAuthor"><br>   
+        <input type="text" class="form-control" id="guessAuthor"><br> 
+    </div>  
 
     <input type="button" onclick="checkAuthor()" class="btn btn-primary custom-btn" value="Check the guess">
     <br><p id="results"> </p>
